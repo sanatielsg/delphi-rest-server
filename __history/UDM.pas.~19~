@@ -35,24 +35,30 @@ implementation
 { TDM }
 
 function TDM.GetPessoa(ASeq: Integer): TPessoa;
-  var vSQL : string;
-      vPessoa : TPessoa;
+  var Sql : string;
+      Pessoa : TPessoa;
 begin
-  vPessoa := Nil;
-  vSQL := 'SELECT * FROM PESSOA WHERE PES_SEQ = :pes_seq';
+  Pessoa := Nil;
+  Sql := 'SELECT FIRST 1 * FROM PESSOA WHERE PES_SEQ = :pes_seq';
+
   with Qry do
   begin
     SQL.Clear;
-    SQL.Add(vSQL);
-    ParamByName(':pes_seq').AsInteger := ASeq;
+    SQL.Add(Sql);
+    ParamByName('pes_seq').AsInteger := ASeq;
     Open();
     if Qry.RecordCount > 0 then
     begin
-      vPessoa := TPessoa.Create;
-      vPessoa.FNome := FieldByName('pes_nome').AsString;
-      Result := vPessoa;
+      Pessoa := TPessoa.Create;
+      with Pessoa do
+      begin
+        Seq := FieldByName('pes_seq').AsInteger;
+        Nome := FieldByName('pes_nome').AsString;
+        DtCriacao := FieldByName('pes_dt_criacao').AsDateTime;
+      end;
     end;
   end;
+  Result := Pessoa;
 end;
 
 end.

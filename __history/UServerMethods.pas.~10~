@@ -12,7 +12,7 @@ type
     { Private declarations }
   public
     { Public declarations }
-    function GetPessoa(): TJSONValue;
+    function GetPessoa(ASeq : Integer): TJSONValue;
   end;
 {$METHODINFO OFF}
 
@@ -20,7 +20,7 @@ implementation
 
 { TServerMethods }
 
-function TServerMethods.GetPessoa: TJSONValue;
+function TServerMethods.GetPessoa(ASeq : Integer): TJSONValue;
   var vPessoa : TPessoa;
       vResult : TJSONValue;
 begin
@@ -28,10 +28,9 @@ begin
   vPessoa := DM.GetPessoa(1);
   if vPessoa <> Nil then
   begin
-   // vResult := TJson.
-
+    vResult := TJson.ObjectToJsonObject(vPessoa);
   end;
-
+  Result := vResult;
 end;
 
 

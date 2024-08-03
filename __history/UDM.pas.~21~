@@ -13,17 +13,14 @@ uses
 type
   TDM = class(TDataModule)
     Con: TFDConnection;
-    QryPessoa: TFDQuery;
+    Qry: TFDQuery;
     FDPhysFBDriverLink: TFDPhysFBDriverLink;
-    QryPessoaPES_SEQ: TIntegerField;
-    QryPessoaPES_NOME: TStringField;
-    QryPessoaPES_DT_CRIACAO: TSQLTimeStampField;
   private
     { Private declarations }
   public
     { Public declarations }
     function GetPessoa(ASeq: Integer): TPessoa;
-    function GetListPessoa():
+//    function GetListPessoa():
   end;
 
 var
@@ -38,8 +35,30 @@ implementation
 { TDM }
 
 function TDM.GetPessoa(ASeq: Integer): TPessoa;
+  var VSQL : string;
+      VPessoa : TPessoa;
 begin
+  VPessoa := Nil;
+  VSQL := 'SELECT FIRST 1 * FROM PESSOA WHERE PES_SEQ = :pes_seq';
 
+  with Qry do
+  begin
+    SQL.Clear;
+    SQL.Add(VSQL);
+    ParamByName('pes_seq').AsInteger := ASeq;
+    Open();
+    if Qry.RecordCount > 0 then
+    begin
+      VPessoa := TPessoa.Create;
+      with VPessoa do
+      begin
+        Seq := FieldByName('pes_seq').AsInteger;
+        Nome := FieldByName('pes_nome').AsString;
+        DtCriacao := FieldByName('pes_dt_criacao').AsDateTime;
+      end;
+    end;
+  end;
+  Result := VPessoa;
 end;
 
 end.

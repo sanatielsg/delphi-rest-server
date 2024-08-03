@@ -22,17 +22,15 @@ implementation
 
 function TServerMethods.GetPessoa(ASeq : Integer): TJSONValue;
   var VPessoa : TPessoa;
+      VResult : TJSONValue;
 begin
-  Result := Nil;
-  try
-    VPessoa := DM.GetPessoa(ASeq);
-    if VPessoa <> Nil then
-    begin
-      Result := TJson.ObjectToJsonObject(VPessoa);
-    end;
-  finally
-    FreeAndNil(VPessoa);
+  VResult := Nil;
+  VPessoa := DM.GetPessoa(1);
+  if VPessoa <> Nil then
+  begin
+    VResult := TJson.ObjectToJsonObject(VPessoa);
   end;
+  Result := VResult;
 end;
 
 

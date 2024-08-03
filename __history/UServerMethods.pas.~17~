@@ -28,6 +28,8 @@ begin
     VPessoa := DM.GetPessoa(ASeq);
     if VPessoa <> Nil then
     begin
+      if VPessoa.Seq = 0 then
+        Result := TJson.ObjectToJsonObject('');
       Result := TJson.ObjectToJsonObject(VPessoa);
     end;
   finally

@@ -25,7 +25,7 @@ function TServerMethods.GetPessoa(ASeq : Integer): TJSONValue;
 begin
   Result := Nil;
   try
-    VPessoa := DM.GetPessoa(ASeq);
+    VPessoa := DM.GetPessoa(1);
     if VPessoa <> Nil then
     begin
       Result := TJson.ObjectToJsonObject(VPessoa);

@@ -41,27 +41,24 @@ begin
   VPessoa := Nil;
   VSQL := 'SELECT FIRST 1 * FROM PESSOA WHERE PES_SEQ = :pes_seq';
 
-  try
-    with Qry do
+  with Qry do
+  begin
+    SQL.Clear;
+    SQL.Add(vSQL);
+    ParamByName('pes_seq').AsInteger := ASeq;
+    Open();
+    if Qry.RecordCount > 0 then
     begin
-      SQL.Clear;
-      SQL.Add(VSQL);
-      ParamByName('pes_seq').AsInteger := ASeq;
-      Open();
-      if Qry.RecordCount > 0 then
+      vPessoa := TPessoa.Create;
+      with vPessoa do
       begin
-        VPessoa := TPessoa.Create;
-        with VPessoa do
-        begin
-          Seq := FieldByName('pes_seq').AsInteger;
-          Nome := FieldByName('pes_nome').AsString;
-          DtCriacao := FieldByName('pes_dt_criacao').AsDateTime;
-        end;
+        Seq := FieldByName('pes_seq').AsInteger;
+        Nome := FieldByName('pes_nome').AsString;
+        DtCriacao := FieldByName('pes_dt_criacao').AsDateTime;
       end;
     end;
-  finally
-    Result := VPessoa;
   end;
+  Result := VPessoa;
 end;
 
 end.
