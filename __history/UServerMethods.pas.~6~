@@ -1,0 +1,32 @@
+unit UServerMethods;
+
+interface
+
+uses System.SysUtils, System.Classes, Datasnap.DSServer, Datasnap.DSAuth,
+System.JSON, System.Generics.Collections, UPessoa;
+
+type
+{$METHODINFO ON}
+  TServerMethods = class(TComponent)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    function GetPessoa(): TJSONValue;
+  end;
+{$METHODINFO OFF}
+
+implementation
+
+{ TServerMethods }
+
+function TServerMethods.GetPessoa: TJSONValue;
+  var vPessoa : TPessoa;
+begin
+
+end;
+
+
+
+end.
+

@@ -1,0 +1,64 @@
+unit UDM;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.FB,
+  FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client,
+  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
+  FireDAC.Comp.DataSet, FireDAC.Phys.IBBase, UPessoa, System.Generics.Collections;
+
+type
+  TDM = class(TDataModule)
+    Con: TFDConnection;
+    Qry: TFDQuery;
+    FDPhysFBDriverLink: TFDPhysFBDriverLink;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    function GetPessoa(ASeq: Integer): TPessoa;
+//    function GetListPessoa():
+  end;
+
+var
+  DM: TDM;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+{ TDM }
+
+function TDM.GetPessoa(ASeq: Integer): TPessoa;
+  var vSQL : string;
+      vPessoa : TPessoa;
+begin
+  vPessoa := Nil;
+  vSQL := 'SELECT FIRST 1 * FROM PESSOA WHERE PES_SEQ = :pes_seq';
+
+  with Qry do
+  begin
+    SQL.Clear;
+    SQL.Add(vSQL);
+    ParamByName('pes_seq').AsInteger := ASeq;
+    Open();
+    if Qry.RecordCount > 0 then
+    begin
+      vPessoa := TPessoa.Create;
+      with vPessoa do
+      begin
+        Seq := FieldByName('pes_seq').AsInteger;
+        Nome := FieldByName('pes_nome').AsString;
+        DtCriacao := FieldByName('pes_dt_criacao').AsDateTime;
+      end;
+    end;
+  end;
+  Result := vPessoa;
+end;
+
+end.

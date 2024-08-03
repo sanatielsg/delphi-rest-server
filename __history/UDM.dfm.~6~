@@ -1,0 +1,45 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 285
+  Width = 400
+  object Con: TFDConnection
+    Params.Strings = (
+      'DriverID=FB'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'Database=C:\database\ESTOQUE.FDB')
+    Connected = True
+    LoginPrompt = False
+    Left = 40
+    Top = 48
+  end
+  object QryPessoa: TFDQuery
+    Connection = Con
+    SQL.Strings = (
+      'SELECT * FROM PESSOA')
+    Left = 104
+    Top = 128
+    object QryPessoaPES_SEQ: TIntegerField
+      FieldName = 'PES_SEQ'
+      Origin = 'PES_SEQ'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryPessoaPES_NOME: TStringField
+      FieldName = 'PES_NOME'
+      Origin = 'PES_NOME'
+      Required = True
+      Size = 120
+    end
+    object QryPessoaPES_DT_CRIACAO: TSQLTimeStampField
+      FieldName = 'PES_DT_CRIACAO'
+      Origin = 'PES_DT_CRIACAO'
+      Required = True
+    end
+  end
+  object FDPhysFBDriverLink: TFDPhysFBDriverLink
+    VendorLib = 'C:\Firebird-2.5.9.27139-0_Win32\bin\fbclient.dll'
+    Left = 72
+    Top = 192
+  end
+end

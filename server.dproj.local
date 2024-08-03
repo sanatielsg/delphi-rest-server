@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2024/08/02 19:33:19.006,=C:\git-repositories\delphi-rest-server\server\FormUnit1.pas</Transaction>
+    <Transaction>2024/08/02 19:33:19.542,=C:\git-repositories\delphi-rest-server\server\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2024/08/02 19:33:19.757,=C:\git-repositories\delphi-rest-server\server\ServerContainerUnit1.pas</Transaction>
+    <Transaction>2024/08/02 19:33:37.068,=C:\git-repositories\delphi-rest-server\server\WebModuleUnit1.pas</Transaction>
+    <Transaction>2024/08/02 19:33:46.179,=C:\git-repositories\delphi-rest-server\server\js\base64.js</Transaction>
+    <Transaction>2024/08/02 19:33:46.334,=C:\git-repositories\delphi-rest-server\server\js\serverfunctionexecutor.js</Transaction>
+    <Transaction>2024/08/02 19:33:46.412,=C:\git-repositories\delphi-rest-server\server\js\json2.js</Transaction>
+    <Transaction>2024/08/02 19:33:46.490,=C:\git-repositories\delphi-rest-server\server\js\callbackframework.js</Transaction>
+    <Transaction>2024/08/02 19:33:46.568,=C:\git-repositories\delphi-rest-server\server\js\serverfunctions.js</Transaction>
+    <Transaction>2024/08/02 19:33:46.631,=C:\git-repositories\delphi-rest-server\server\js\base64-min.js</Transaction>
+    <Transaction>2024/08/02 19:33:46.709,=C:\git-repositories\delphi-rest-server\server\js\json2-min.js</Transaction>
+    <Transaction>2024/08/02 19:33:46.818,=C:\git-repositories\delphi-rest-server\server\js\serverfunctionexecutor-min.js</Transaction>
+    <Transaction>2024/08/02 19:33:46.897,=C:\git-repositories\delphi-rest-server\server\js\callbackframework-min.js</Transaction>
+    <Transaction>2024/08/02 19:35:07.772,C:\git-repositories\delphi-rest-server\server\UFrmPrincipal.dfm=C:\git-repositories\delphi-rest-server\server\FormUnit1.dfm</Transaction>
+    <Transaction>2024/08/02 19:35:07.772,C:\git-repositories\delphi-rest-server\server\UFrmPrincipal.pas=C:\git-repositories\delphi-rest-server\server\FormUnit1.pas</Transaction>
+    <Transaction>2024/08/02 19:35:18.993,C:\git-repositories\delphi-rest-server\server\UWebModule.dfm=C:\git-repositories\delphi-rest-server\server\WebModuleUnit1.dfm</Transaction>
+    <Transaction>2024/08/02 19:35:18.993,C:\git-repositories\delphi-rest-server\server\UWebModule.pas=C:\git-repositories\delphi-rest-server\server\WebModuleUnit1.pas</Transaction>
+    <Transaction>2024/08/02 19:35:26.897,C:\git-repositories\delphi-rest-server\server\UServerContainer.pas=C:\git-repositories\delphi-rest-server\server\ServerContainerUnit1.pas</Transaction>
+    <Transaction>2024/08/02 19:35:26.897,C:\git-repositories\delphi-rest-server\server\UServerContainer.dfm=C:\git-repositories\delphi-rest-server\server\ServerContainerUnit1.dfm</Transaction>
+    <Transaction>2024/08/02 19:35:35.381,C:\git-repositories\delphi-rest-server\server\UServerMethods.pas=C:\git-repositories\delphi-rest-server\server\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2024/08/02 20:26:49.633,=C:\git-repositories\delphi-rest-server\server\Unit1.pas</Transaction>
+    <Transaction>2024/08/02 20:27:06.258,C:\git-repositories\delphi-rest-server\server\UPessoa.pas=C:\git-repositories\delphi-rest-server\server\Unit1.pas</Transaction>
+    <Transaction>2024/08/02 21:03:52.855,=C:\git-repositories\delphi-rest-server\server\Unit1.pas</Transaction>
+    <Transaction>2024/08/02 21:04:06.696,C:\git-repositories\delphi-rest-server\server\UDM.dfm=C:\git-repositories\delphi-rest-server\server\Unit1.dfm</Transaction>
+    <Transaction>2024/08/02 21:04:06.696,C:\git-repositories\delphi-rest-server\server\UDM.pas=C:\git-repositories\delphi-rest-server\server\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

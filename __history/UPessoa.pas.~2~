@@ -1,0 +1,16 @@
+unit UPessoa;
+
+interface
+
+type
+TPessoa = class
+  FNome: string;
+
+  public
+
+
+end;
+
+implementation
+
+end.

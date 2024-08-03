@@ -1,0 +1,18 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 285
+  Width = 400
+  object Con: TFDConnection
+    Params.Strings = (
+      'DriverID=FB'
+      'User_Name=sysdba'
+      'Password=masterkey')
+    Left = 40
+    Top = 48
+  end
+  object QryPessoa: TFDQuery
+    Connection = Con
+    Left = 120
+    Top = 120
+  end
+end
