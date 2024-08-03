@@ -55,7 +55,7 @@ begin
         begin
           Seq := FieldByName('pes_seq').AsInteger;
           Nome := FieldByName('pes_nome').AsString;
-          DtCriacao := FieldByName('pes_dt_criacao').AsDateTime;
+          DtCriacao := FieldByName('pes_dt_criacao').AsString;
         end;
       end;
     end;
